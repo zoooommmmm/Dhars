@@ -1,0 +1,265 @@
+*{
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+  
+/* Header styles */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+/* Hamburger menu toggle button styles */
+
+.hamburger-menu-toggle {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: #000000;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+}
+
+.hamburger-menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background-color: #ffffff;
+  margin: 5px 0;
+  margin-left: 4px;
+  transition: all 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+.hamburger-menu-toggle span:nth-child(2) {
+  width: 15px;
+}
+
+/* Menu container styles */
+.menu-holder{
+    background-color: #ffffff;
+    width: 50%;
+    height: 100vh;
+}
+
+
+
+.menu-container {
+  margin: 0;
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+  transform: translateX(-100%);
+  transition: all 0.5s ease-in-out;
+  z-index: 998;
+}
+
+.menu-container.open {
+  transform: translateX(0);
+}
+
+/* Menu column styles */
+
+.menu-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.3rem;
+  top: 90%;
+  
+}
+
+.menu-column li {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.menu-column li::after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background-color: #333;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .menu-column li:hover::after {
+    transform: scaleX(1);
+  }
+
+.menu-column li:hover {
+  transform: scale(1.1);
+}
+
+.menu-column a {
+  color: #000000;
+  text-decoration: none;
+}
+
+/* Tagline and subheading column styles */
+
+.tagline-column {
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+}
+
+.tagline-column h2 {
+  margin-top: 0;
+  color: #000000;
+}
+
+/* Animation styles */
+.hamburger-menu-toggle.open span {
+  background-color: #ffffff;
+}
+
+.hamburger-menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Dhars */
+.animated-border {
+  position: relative;
+  display: inline-block;
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.animated-border::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border: 1px solid #333;
+  animation: animate 2s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.2) rotate(360deg);
+  }
+}
+
+/* Hero section styles */
+.hero-section {
+  position: absolute;
+  background-position: 0% 100%;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  z-index: 0;
+}
+
+.shrink {
+    display: inline-flex;
+    flex: 1;
+    width: auto;
+}
+
+.hero-section h1 {
+  font-size: 48px;
+  font-weight: normal;
+  letter-spacing: 10px;
+  margin-bottom: 20px;
+}
+
+.hero-section p {
+  font-size: .9rem;
+  margin-bottom: 40px;
+}
+
+button.solidline {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button.solidline:hover {
+  background-color: #555;
+}
+
+button.undeline {
+  background-color: transparent;
+  color: #333;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+}
+
+button.undeline::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+button.undeline:hover::before {
+  transform: scaleX(1);
+}
+
+/* Animation styles typing effect*/
+.typing-effect {
+  border-right: .15em solid black;
+  font-family: monospace;
+  animation: blink 0.5s step-end infinite;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Media queries */
